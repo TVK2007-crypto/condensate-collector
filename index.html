@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Concave Lid Condensate Collector</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Concave Lid with Condensate Collector</h1>
+
+    <p class="subtitle">
+        Steam rises from heated water, condenses on the concave lid,
+        and flows into the collection cup.
+    </p>
+
+    <!-- =========================
+         ANIMATION AREA
+    ========================== -->
+
+    <div class="animation-box">
+
+        <!-- Heat -->
+        <div class="heat-source">
+            <div class="flame flame1"></div>
+            <div class="flame flame2"></div>
+            <div class="flame flame3"></div>
+        </div>
+
+        <!-- Pot -->
+        <div class="pot">
+
+            <div class="pot-rim"></div>
+
+            <!-- Water inside pot -->
+            <div class="water">
+
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Steam container -->
+        <div id="steamContainer"></div>
+
+
+        <!-- =========================
+             CONCAVE LID
+        ========================== -->
+
+        <div class="lid">
+
+            <div class="lid-top"></div>
+
+            <!-- Inner concave surface -->
+            <div class="concave-surface">
+
+                <div class="condensation-drop drop1"></div>
+                <div class="condensation-drop drop2"></div>
+                <div class="condensation-drop drop3"></div>
+                <div class="condensation-drop drop4"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             COLLECTION CHANNEL
+        ========================== -->
+
+        <div class="collection-channel"></div>
+
+
+        <!-- =========================
+             COLLECTION CUP
+        ========================== -->
+
+        <div class="cup" id="cup">
+
+            <div class="cup-label">
+                COLLECTOR
+            </div>
+
+            <div
+                class="cup-water"
+                id="cupWater">
+            </div>
+
+            <div class="cup-thread thread1"></div>
+            <div class="cup-thread thread2"></div>
+            <div class="cup-thread thread3"></div>
+
+        </div>
+
+
+        <!-- Flowing droplets -->
+        <div
+            id="dropletContainer"
+            class="droplet-container">
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTROLS
+    ========================== -->
+
+    <div class="controls">
+
+        <button
+            class="start-btn"
+            onclick="startAnimation()">
+
+            ▶ Start
+
+        </button>
+
+
+        <button
+            class="reset-btn"
+            onclick="resetAnimation()">
+
+            ↻ Reset
+
+        </button>
+
+
+        <button
+            class="empty-btn"
+            onclick="emptyCup()">
+
+            🪣 Empty Cup
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         INFORMATION
+    ========================== -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <span class="stat-title">
+                Water Collected
+            </span>
+
+            <strong>
+                <span id="collectedAmount">0</span> ml
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-title">
+                Time Elapsed
+            </span>
+
+            <strong>
+                <span id="timeElapsed">0</span> s
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-title">
+                System Status
+            </span>
+
+            <strong id="status">
+                Ready
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Explanation -->
+
+    <div class="explanation">
+
+        <h2>How It Works</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <span>1</span>
+                <p>
+                    Water is heated inside the pot.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>2</span>
+                <p>
+                    Steam rises toward the concave lid.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>3</span>
+                <p>
+                    Steam condenses on the cooler lid surface.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>4</span>
+                <p>
+                    Condensate flows toward the collection point.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>5</span>
+                <p>
+                    Water enters the screw-on collection cup.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
