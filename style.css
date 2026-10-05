@@ -1,0 +1,1068 @@
+/* =====================================
+   GENERAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f4ff,
+            #f7fbff
+        );
+
+    color: #1d3557;
+}
+
+
+.container {
+
+    width: 95%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 25px 10px 50px;
+
+    text-align: center;
+}
+
+
+h1 {
+
+    margin-bottom: 5px;
+
+    font-size: 32px;
+
+    color: #12355b;
+}
+
+
+.subtitle {
+
+    margin-top: 5px;
+
+    color: #526777;
+
+    font-size: 16px;
+}
+
+
+/* =====================================
+   ANIMATION BOX
+===================================== */
+
+.animation-box {
+
+    position: relative;
+
+    width: 900px;
+    max-width: 100%;
+
+    height: 560px;
+
+    margin: 30px auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 3px solid #183b56;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #bde7ff 0%,
+            #eaf8ff 65%,
+            #d6e5ed 100%
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================
+   POT
+===================================== */
+
+.pot {
+
+    position: absolute;
+
+    width: 470px;
+    height: 190px;
+
+    left: 210px;
+    bottom: 90px;
+
+    background:
+        linear-gradient(
+            to right,
+            #555,
+            #999,
+            #666
+        );
+
+    border: 6px solid #333;
+
+    border-radius:
+        20px 20px 80px 80px;
+
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+
+/* Pot rim */
+
+.pot-rim {
+
+    position: absolute;
+
+    width: 490px;
+    height: 35px;
+
+    left: -16px;
+    top: -12px;
+
+    background: #444;
+
+    border: 5px solid #222;
+
+    border-radius: 50%;
+
+    z-index: 5;
+}
+
+
+/* =====================================
+   WATER
+===================================== */
+
+.water {
+
+    position: absolute;
+
+    width: 440px;
+    height: 110px;
+
+    left: 9px;
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            #49b9ff,
+            #087fc5
+        );
+
+    border-radius:
+        50% 50% 20px 20px;
+
+    overflow: hidden;
+}
+
+
+/* Water waves */
+
+.wave {
+
+    position: absolute;
+
+    width: 500px;
+    height: 35px;
+
+    left: -30px;
+
+    border-radius: 50%;
+
+    border-top: 5px solid rgba(255,255,255,0.7);
+
+    animation:
+        waveMove 2s linear infinite;
+}
+
+
+.wave1 {
+
+    top: 15px;
+
+}
+
+
+.wave2 {
+
+    top: 40px;
+
+    animation-delay: 0.8s;
+
+}
+
+
+@keyframes waveMove {
+
+    0% {
+
+        transform: translateX(-30px);
+
+    }
+
+    50% {
+
+        transform: translateX(20px);
+
+    }
+
+    100% {
+
+        transform: translateX(-30px);
+
+    }
+
+}
+
+
+/* =====================================
+   HEAT
+===================================== */
+
+.heat-source {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 335px;
+
+    width: 220px;
+
+    height: 60px;
+
+    z-index: 2;
+}
+
+
+.flame {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 35px;
+
+    height: 55px;
+
+    background:
+        linear-gradient(
+            #fff200,
+            #ff8c00,
+            #ff3300
+        );
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    transform:
+        rotate(180deg);
+
+    animation:
+        flameMove 0.6s infinite alternate;
+}
+
+
+.flame1 {
+
+    left: 40px;
+
+}
+
+
+.flame2 {
+
+    left: 90px;
+
+    height: 65px;
+
+    animation-delay: 0.2s;
+
+}
+
+
+.flame3 {
+
+    left: 140px;
+
+    animation-delay: 0.4s;
+
+}
+
+
+@keyframes flameMove {
+
+    from {
+
+        transform:
+            rotate(180deg)
+            scale(0.9);
+
+    }
+
+    to {
+
+        transform:
+            rotate(180deg)
+            scale(1.1);
+
+    }
+
+}
+
+
+/* =====================================
+   CONCAVE LID
+===================================== */
+
+.lid {
+
+    position: absolute;
+
+    width: 510px;
+    height: 150px;
+
+    left: 190px;
+    top: 125px;
+
+    z-index: 10;
+}
+
+
+/* Outer lid */
+
+.lid-top {
+
+    position: absolute;
+
+    width: 510px;
+    height: 130px;
+
+    background:
+        linear-gradient(
+            #cfcfcf,
+            #858585
+        );
+
+    border: 6px solid #333;
+
+    border-radius:
+        50% 50% 15% 15%;
+
+    box-shadow:
+        0 8px 10px rgba(0,0,0,0.25);
+}
+
+
+/* Concave underside */
+
+.concave-surface {
+
+    position: absolute;
+
+    width: 420px;
+    height: 105px;
+
+    left: 45px;
+    top: 35px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #eeeeee,
+            #aaaaaa
+        );
+
+    border:
+        5px solid #666;
+
+    border-top: none;
+
+    border-radius:
+        0 0 50% 50%;
+
+    z-index: 12;
+}
+
+
+/* =====================================
+   CONDENSATION DROPS ON LID
+===================================== */
+
+.condensation-drop {
+
+    position: absolute;
+
+    width: 12px;
+    height: 17px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            white,
+            #42a5f5
+        );
+
+    border-radius: 50%;
+
+    animation:
+        condensation 3s infinite;
+}
+
+
+.drop1 {
+
+    left: 100px;
+    top: 30px;
+
+}
+
+
+.drop2 {
+
+    left: 180px;
+    top: 40px;
+
+    animation-delay: 0.8s;
+
+}
+
+
+.drop3 {
+
+    left: 250px;
+    top: 35px;
+
+    animation-delay: 1.4s;
+
+}
+
+
+.drop4 {
+
+    left: 320px;
+    top: 45px;
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes condensation {
+
+    0% {
+
+        transform:
+            scale(0.4);
+
+        opacity: 0;
+
+    }
+
+    40% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(35px)
+            scale(1.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================
+   STEAM
+===================================== */
+
+#steamContainer {
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+
+
+.steam {
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background:
+        rgba(255,255,255,0.7);
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    animation:
+        steamRise 4s linear forwards;
+}
+
+
+@keyframes steamRise {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.6);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 0.8;
+
+    }
+
+    80% {
+
+        opacity: 0.6;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-300px)
+            scale(1.8);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================
+   COLLECTION CHANNEL
+===================================== */
+
+.collection-channel {
+
+    position: absolute;
+
+    width: 70px;
+    height: 15px;
+
+    left: 600px;
+    top: 230px;
+
+    background: #555;
+
+    border-radius: 10px;
+
+    transform:
+        rotate(15deg);
+
+    z-index: 15;
+}
+
+
+/* =====================================
+   CUP
+===================================== */
+
+.cup {
+
+    position: absolute;
+
+    width: 120px;
+    height: 130px;
+
+    right: 80px;
+    top: 205px;
+
+    background:
+        linear-gradient(
+            to right,
+            #d8d8d8,
+            #ffffff,
+            #aaa
+        );
+
+    border:
+        5px solid #333;
+
+    border-radius:
+        10px 10px 25px 25px;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Cup label */
+
+.cup-label {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 12px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    z-index: 25;
+}
+
+
+/* Cup water */
+
+.cup-water {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 0%;
+
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            #4fc3f7,
+            #0288d1
+        );
+
+    transition:
+        height 0.5s ease;
+
+    z-index: 21;
+}
+
+
+/* Cup threads */
+
+.cup-thread {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #777;
+
+    left: 0;
+
+    z-index: 25;
+}
+
+
+.thread1 {
+
+    top: 50px;
+
+}
+
+
+.thread2 {
+
+    top: 58px;
+
+}
+
+
+.thread3 {
+
+    top: 66px;
+
+}
+
+
+/* =====================================
+   DROPLETS
+===================================== */
+
+.droplet-container {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+
+    z-index: 30;
+}
+
+
+.droplet {
+
+    position: absolute;
+
+    width: 14px;
+    height: 20px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            #2196f3
+        );
+
+    border-radius:
+        50% 50% 55% 55%;
+
+    animation:
+        dropletFlow 2.5s ease-in forwards;
+}
+
+
+@keyframes dropletFlow {
+
+    0% {
+
+        left: 535px;
+        top: 220px;
+
+        opacity: 1;
+
+    }
+
+    35% {
+
+        left: 570px;
+        top: 230px;
+
+    }
+
+    70% {
+
+        left: 650px;
+        top: 255px;
+
+    }
+
+    100% {
+
+        left: 745px;
+        top: 315px;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================
+   CONTROLS
+===================================== */
+
+.controls {
+
+    margin: 20px auto;
+
+}
+
+
+.controls button {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    margin: 5px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.controls button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.2);
+}
+
+
+.start-btn {
+
+    background: #2ecc71;
+
+    color: white;
+
+}
+
+
+.reset-btn {
+
+    background: #3498db;
+
+    color: white;
+
+}
+
+
+.empty-btn {
+
+    background: #e67e22;
+
+    color: white;
+
+}
+
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+
+.stat-card {
+
+    width: 220px;
+
+    padding: 18px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.stat-title {
+
+    display: block;
+
+    font-size: 14px;
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+
+.stat-card strong {
+
+    font-size: 24px;
+
+    color: #1d3557;
+
+}
+
+
+/* =====================================
+   EXPLANATION
+===================================== */
+
+.explanation {
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+
+.explanation h2 {
+
+    margin-top: 0;
+
+}
+
+
+.steps {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.step {
+
+    width: 170px;
+
+    padding: 15px;
+
+    background: #f2f8fc;
+
+    border-radius: 10px;
+}
+
+
+.step span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    background: #3498db;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.step p {
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+    .animation-box {
+
+        height: 450px;
+
+    }
+
+    .pot {
+
+        width: 330px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+    }
+
+    .water {
+
+        width: 300px;
+
+    }
+
+    .lid {
+
+        transform:
+            scale(0.7);
+
+        transform-origin:
+            top left;
+
+        left: 80px;
+
+    }
+
+    .cup {
+
+        right: 20px;
+
+        transform:
+            scale(0.8);
+
+        transform-origin:
+            top right;
+
+    }
+
+}
